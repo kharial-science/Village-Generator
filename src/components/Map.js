@@ -8,8 +8,15 @@ class Map extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      map: new Array(289).fill({ building: 'way' })
+      map: new Array(289)
     }
+
+    let map = this.state.map
+
+    for (let i = 0; i < 289; i++) map[i] = { building: 'way' }
+
+    map[0].building = 'house'
+    this.setState({ map })
   }
   render() {
 
