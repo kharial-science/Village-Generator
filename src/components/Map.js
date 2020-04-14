@@ -8,26 +8,14 @@ class Map extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      map: new Array(289).fill({ building: undefined })
+      map: new Array(289).fill({ building: 'way' })
     }
-
-    // let map = []
-    // for (let i = 0; i < 289; i++) {
-    //   map.push({
-    //     building: undefined
-    //   })
-    // }
-
-    // console.log(map)
-    // this.setState({ map }) // Doesn't work
   }
   render() {
 
-    console.log(this.state)
-
     let chunkArray = []
-    for (let chunk of this.state.map) {
-      chunkArray.push(<Chunk building={chunk.building} />)
+    for (const chunk of this.state.map) {
+      chunkArray.push(<Chunk building={chunk.building} family={this.props.family} />)
     }
     return (
       <div id="Map">

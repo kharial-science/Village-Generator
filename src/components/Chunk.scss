@@ -1,4 +1,15 @@
 .Chunk {
   border: solid black 1px;
   background-color: lightgreen;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 65%;
+    display: block;
+    margin: auto;
+    // max-height: 75%;
+  }
 }
