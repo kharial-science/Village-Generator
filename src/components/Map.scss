@@ -1,0 +1,8 @@
+#Map {
+  height: 90vh;
+  width: 90vh;
+
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  grid-template-rows: repeat(17, 1fr);
+}
