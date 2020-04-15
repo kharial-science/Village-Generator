@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Village-Generator/static/css/main.0e184008.chunk.css",
+    "main.js": "/Village-Generator/static/js/main.6c73ee53.chunk.js",
+    "main.js.map": "/Village-Generator/static/js/main.6c73ee53.chunk.js.map",
+    "runtime-main.js": "/Village-Generator/static/js/runtime-main.2ae2ba5e.js",
+    "runtime-main.js.map": "/Village-Generator/static/js/runtime-main.2ae2ba5e.js.map",
+    "static/js/2.5faa804b.chunk.js": "/Village-Generator/static/js/2.5faa804b.chunk.js",
+    "static/js/2.5faa804b.chunk.js.map": "/Village-Generator/static/js/2.5faa804b.chunk.js.map",
+    "index.html": "/Village-Generator/index.html",
+    "precache-manifest.b3db2347b7dc062f89f380e210b5852f.js": "/Village-Generator/precache-manifest.b3db2347b7dc062f89f380e210b5852f.js",
+    "service-worker.js": "/Village-Generator/service-worker.js",
+    "static/css/main.0e184008.chunk.css.map": "/Village-Generator/static/css/main.0e184008.chunk.css.map",
+    "static/js/2.5faa804b.chunk.js.LICENSE.txt": "/Village-Generator/static/js/2.5faa804b.chunk.js.LICENSE.txt",
+    "static/media/building_houseBlue.svg": "/Village-Generator/static/media/building_houseBlue.0e087ae0.svg",
+    "static/media/building_houseGreen.svg": "/Village-Generator/static/media/building_houseGreen.b5adbf1e.svg",
+    "static/media/building_housePink.svg": "/Village-Generator/static/media/building_housePink.e7a95da1.svg",
+    "static/media/building_houseYellow.svg": "/Village-Generator/static/media/building_houseYellow.8639dadd.svg",
+    "static/media/familybuilding_townhall.svg": "/Village-Generator/static/media/familybuilding_townhall.ec27b597.svg",
+    "static/media/App.css": "/Village-Generator/static/media/global_background.cca8f218.svg",
+    "static/media/global_chooseFamilyLogo.svg": "/Village-Generator/static/media/global_chooseFamilyLogo.863d513a.svg",
+    "static/media/global_way.svg": "/Village-Generator/static/media/global_way.a15a5b3a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ae2ba5e.js",
+    "static/js/2.5faa804b.chunk.js",
+    "static/css/main.0e184008.chunk.css",
+    "static/js/main.6c73ee53.chunk.js"
+  ]
+}
