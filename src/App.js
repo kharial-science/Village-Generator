@@ -62,12 +62,12 @@ class App extends Component {
     }
 
     let csvContent = "data:text/csv;charset=utf-8,"
-    rows.forEach(function (rowArray) {
+    rows.forEach(rowArray => {
       console.log(rowArray)
       let row = rowArray.join(",")
       console.log(row)
       csvContent += row + "\r\n"
-    });
+    })
 
 
     console.log(csvContent)
