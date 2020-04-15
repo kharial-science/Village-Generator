@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Map from './components/Map'
 
+import ChooseFamily from './components/ChooseFamily'
+
 import Toolbar from './components/Toolbar'
 
 // import logo from './logo.svg';
@@ -45,6 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <Map family={this.state.family} map={this.state.map} handleDragOver={this.handleDragOver} handleDragDrop={this.handleDragDrop} />
+        <ChooseFamily />
         <Toolbar family={this.state.family} handleDragStart={this.handleDragStart} />
       </div>
     );
