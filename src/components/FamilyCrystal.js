@@ -8,7 +8,7 @@ class FamilyCrystal extends Component {
   }
   render() {
     return (
-      <div className="FamilyCrystal">
+      <div className="FamilyCrystal" onClick={() => this.props.handleFamily(this.props.family)}>
         <img id={`${this.props.family}-family`} src={require('../assets/images/global_chooseFamilyLogo.svg')} alt={this.props.family} />
       </div>
     )

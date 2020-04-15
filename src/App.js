@@ -23,6 +23,11 @@ class App extends Component {
     this.state.map[288].building = 'townhall'
 
     this.handleDragDrop = this.handleDragDrop.bind(this)
+    this.handleFamily = this.handleFamily.bind(this)
+  }
+
+  handleFamily(family) {
+    this.setState({ family })
   }
 
   handleDragStart(e, building) {
@@ -47,7 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <Map family={this.state.family} map={this.state.map} handleDragOver={this.handleDragOver} handleDragDrop={this.handleDragDrop} />
-        <ChooseFamily />
+        <ChooseFamily handleFamily={this.handleFamily} />
         <Toolbar family={this.state.family} handleDragStart={this.handleDragStart} />
       </div>
     );

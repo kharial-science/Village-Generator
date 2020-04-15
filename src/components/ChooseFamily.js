@@ -9,7 +9,7 @@ class ChooseFamily extends Component {
     super(props)
   }
   render() {
-    const familyArray = ['pink', 'blue', 'yellow', 'green'].map(elt => <FamilyCrystal family={elt} />)
+    const familyArray = ['pink', 'blue', 'yellow', 'green'].map(elt => <FamilyCrystal family={elt} handleFamily={this.props.handleFamily} />)
     return (
       <div id="ChooseFamily">
         {familyArray}
