@@ -1,0 +1,43 @@
+#Map {
+  height: 91.8vh;
+  width: 91.8vh;
+
+  overflow: hidden;
+  border-radius: 1.8vh;
+  box-shadow: 0 4px 12px 0px rgba(0,0,0,.25);
+
+  display: grid;
+  grid-template-columns: repeat(51, 1.8vh);
+  grid-template-rows: repeat(51, 1.8vh);
+
+  .Chunk {
+    background-color: lightgreen;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:hover {
+      filter: brightness(.8);
+    }
+  
+    &.selected {
+      filter: brightness(1.3);
+      box-shadow: 0 4px 12px 0px rgba(0,0,0,.25);
+  
+      img {
+        transform: translateY(-.3vh);
+      }
+    }
+  
+    img {
+      max-width: 85%;
+      display: block;
+      margin: auto;
+      
+      filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+  
+      transition: transform .1s;
+    }
+  }
+}

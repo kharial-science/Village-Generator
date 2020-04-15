@@ -1,82 +1,72 @@
 import React, { Component } from 'react';
 
-import Map from './components/Map'
+import './App.css'
 
-import ChooseFamily from './components/ChooseFamily'
-
-import Toolbar from './components/Toolbar'
-
-import SaveButton from './components/SaveButton'
-
-// import logo from './logo.svg';
-import './App.css';
+import Map from './components/Map/Map'
+import ChooseFamily from './components/LeftButtons/ChooseFamily'
+import Toolbar from './components/RightButtons/Toolbar'
+import SaveButton from './components/LeftButtons/SaveButton'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       family: 'pink',
-      map: new Array(289).fill(null).map(() => new Object({ building: 'way' }))
+      map: new Array(2601).fill(null).map(() => new Object({ building: undefined })),
+      selectedChunk: 1299
     }
 
-    this.state.map[0].building = 'house'
-
-    this.state.map[144].building = ''
-    this.state.map[288].building = 'townhall'
-
-    this.handleDragDrop = this.handleDragDrop.bind(this)
-    this.handleFamily = this.handleFamily.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleChunkSelect = this.handleChunkSelect.bind(this)
+    this.handleFamilySelect = this.handleFamilySelect.bind(this)
+    this.handleBuildingClick = this.handleBuildingClick.bind(this)
     this.handleSave = this.handleSave.bind(this)
   }
 
-  handleFamily(family) {
-    this.setState({ family })
+  componentDidMount() {
+    document.addEventListener('wheel', this.displayMenus)
+
+    document.onkeypress = this.handleKeyPress
   }
 
-  handleDragStart(e, building) {
-    e.dataTransfer.setData("building", building)
+  handleKeyPress(e) {
+    let selectedChunk = this.state.selectedChunk
+
+    if (e.charCode === 122) selectedChunk -= 51 // go top
+    else if (e.charCode === 100) selectedChunk += 1 // go right
+    else if (e.charCode === 115) selectedChunk += 51 // go down
+    else if (e.charCode === 113) selectedChunk -= 1 // go left
+
+    if (selectedChunk < 0) selectedChunk = 2601 + selectedChunk
+
+    if (selectedChunk !== this.state.selectedChunk) this.setState({ selectedChunk: selectedChunk })
   }
 
-  handleDragDrop(e, index) {
-    e.preventDefault()
-    let building = e.dataTransfer.getData("building")
-    let map = this.state.map
-    map[index] = { building }
-    this.setState({ map })
+  handleFamilySelect(family) {
+    this.setState({ family: family })
   }
 
-  handleDragOver(e) {
-    console.log("dragOver")
-    e.preventDefault()
-    e.stopPropagation()
+  handleBuildingClick(e, building) {
+    this.state.map[this.state.selectedChunk] = { building }
+    this.setState({ map: this.state.map })
+  }
+
+  handleChunkSelect(index) {
+    this.setState({ selectedChunk: index })
   }
 
   handleSave() {
-    let rows = new Array(17).fill(null).map(() => new Array())
+    let rows = new Array(51).fill(null).map(() => new Array())
     for (let i = 0; i < this.state.map.length; i++) {
-      rows[Math.floor(i / 17)].push(this.state.map[i].building)
+      rows[Math.floor(i / 51)].push(this.state.map[i].building)
     }
-    // console.log(rows)
-
-    // const rows = [
-    //   ["name1", "city1", "some other info"],
-    //   ["name2", "city2", "more info"]
-    // ];
-
-    // let csvContent = "data:text/csv;charset=utf-8,"
-    // rows.forEach(function (rowArray) {
-    //   console.log(rowArray)
-    //   let row = rowArray.join(",");
-    //   console.log(row)
-    //   csvContent += row + "\r\n";
-    // });
 
     let csvContent = "data:text/csv;charset=utf-8,"
     rows.forEach(function (rowArray) {
       console.log(rowArray)
-      let row = rowArray.join(";");
+      let row = rowArray.join(",")
       console.log(row)
-      csvContent += row + "\r\n";
+      csvContent += row + "\r\n"
     });
 
 
@@ -92,11 +82,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Map family={this.state.family} map={this.state.map} handleDragOver={this.handleDragOver} handleDragDrop={this.handleDragDrop} />
-        <ChooseFamily handleFamily={this.handleFamily} />
-        <Toolbar family={this.state.family} handleDragStart={this.handleDragStart} />
-        <SaveButton handleSave={this.handleSave} />
+      <div id="App">
+        <div id="left-column" className="menu">
+          <ChooseFamily family={this.state.family} handleFamily={this.handleFamilySelect} />
+          <SaveButton handleSave={this.handleSave} />
+        </div>
+
+        <Map family={this.state.family} map={this.state.map} selectedChunk={this.state.selectedChunk} handleChunkSelect={this.handleChunkSelect} />
+
+        <div id="right-column" className="menu">
+          <Toolbar family={this.state.family} handleBuildingClick={this.handleBuildingClick} />
+        </div>
+
       </div>
     );
   }

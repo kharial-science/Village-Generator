@@ -1,0 +1,53 @@
+#Toolbar {
+  height: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .Building {
+    width: 20vh;
+    height: 20vh;
+    margin: 2vh 0;
+  
+    text-align: center;
+    
+    cursor: pointer;
+    background-color: lightgreen;
+    border-radius: 5vh;
+    box-shadow: 0 4px 12px 0px rgba(0,0,0,.25);
+    
+    transition: filter .15s, transform .15s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      filter: brightness(.8);
+
+      img {
+        transform: translateY(-2vh);
+      }
+    }
+
+    &:active {
+      filter: brightness(.7);
+      transform: translateY(1vh);
+
+      img {
+        transform: translateY(0);
+      }
+    }
+  
+    img {
+      max-width: 4vh;
+      display: block;
+      margin: auto;
+  
+      transition: transform .1s;
+      filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}

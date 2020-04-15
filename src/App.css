@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+body {
+  background-color: #2E2E2E;
+  background-image: url("./assets/images/global_background.svg");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(46, 46, 46, 0.8);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc(calc(100vw - 90vh) / 2) [map-start] 91.8vh [map-end] calc(calc(100vw - 90vh) / 2);
+      grid-template-columns: calc(calc(100vw - 90vh) / 2) [map-start] 91.8vh [map-end] calc(calc(100vw - 90vh) / 2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#App .menu {
+  width: 80%;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+  background-color: #2E2E2E;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#App #left-column #SaveButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+#App #left-column #SaveButton button {
+  margin-top: 4vh;
+  padding: 2vh 4vh;
+  width: 20vh;
+  height: 20vh;
+  border: none;
+  background-color: lightskyblue;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5vh;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 7vh;
+  cursor: pointer;
+  border-radius: 5vh;
+  box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transition: -webkit-filter .15s, -webkit-transform .15s;
+  transition: -webkit-filter .15s, -webkit-transform .15s;
+  transition: filter .15s, transform .15s;
+  transition: filter .15s, transform .15s, -webkit-filter .15s, -webkit-transform .15s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#App #left-column #SaveButton button:hover {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+  -webkit-transform: translateY(-2vh);
+          transform: translateY(-2vh);
 }
+
+#App #left-column #SaveButton button:active {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+  -webkit-transform: translateY(1vh);
+          transform: translateY(1vh);
+}
+
+#App #Map {
+  grid-column: map-start / map-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#App #right-column {
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+/*# sourceMappingURL=App.css.map */
