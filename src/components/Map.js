@@ -7,22 +7,15 @@ import './Map.css'
 class Map extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      map: new Array(289)
-    }
 
-    let map = this.state.map
-
-    for (let i = 0; i < 289; i++) map[i] = { building: 'way' }
-
-    map[0].building = 'house'
-    this.setState({ map })
   }
   render() {
 
     let chunkArray = []
-    for (const chunk of this.state.map) {
-      chunkArray.push(<Chunk building={chunk.building} family={this.props.family} />)
+    let i = 0
+    for (const chunk of this.props.map) {
+      chunkArray.push(<Chunk key={i} index={i} building={chunk.building} family={this.props.family} handleDragOver={this.props.handleDragOver} handleDragDrop={this.props.handleDragDrop} />)
+      i++
     }
     return (
       <div id="Map">
