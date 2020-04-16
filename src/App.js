@@ -6,6 +6,7 @@ import Map from './components/Map/Map'
 import ChooseFamily from './components/LeftButtons/ChooseFamily'
 import Toolbar from './components/RightButtons/Toolbar'
 import SaveButton from './components/LeftButtons/SaveButton'
+import ImportButton from './components/LeftButtons/ImportButton'
 
 class App extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class App extends Component {
     this.handleFamilySelect = this.handleFamilySelect.bind(this)
     this.handleBuildingClick = this.handleBuildingClick.bind(this)
     this.handleSave = this.handleSave.bind(this)
+    this.handleImport = this.handleImport.bind(this)
   }
 
   componentDidMount() {
@@ -80,12 +82,37 @@ class App extends Component {
     link.click()
   }
 
+  handleImport(e) {
+
+    let file = e.target.files[0]
+
+    let fileReader = new FileReader()
+    fileReader.onloadend = (e) => {
+      const content = fileReader.result
+      let map = []
+      let rows = content.split('\r\n')
+      rows = rows.slice(0, rows.length - 1)
+
+      for (let i = 0; i < 50; i++) {
+        rows[i].split(',').forEach(elt => {
+          map.push({ building: elt })
+        })
+      }
+
+      console.log(map)
+
+      this.setState({ map })
+    }
+    fileReader.readAsText(file)
+  }
+
   render() {
     return (
       <div id="App">
         <div id="left-column" className="menu">
           <ChooseFamily family={this.state.family} handleFamily={this.handleFamilySelect} />
           <SaveButton handleSave={this.handleSave} />
+          <ImportButton handleImport={this.handleImport} />
         </div>
 
         <Map family={this.state.family} map={this.state.map} selectedChunk={this.state.selectedChunk} handleChunkSelect={this.handleChunkSelect} />
