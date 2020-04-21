@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "af6b865e55818429d12ade57fdd147da",
+    "revision": "0b2a2d84db9732f6fbc8e2c8a0f508ce",
     "url": "/Village-Generator/index.html"
   },
   {
-    "revision": "dcf691db3409292cf147",
+    "revision": "0f3d2fbac08602c4eab1",
     "url": "/Village-Generator/static/css/main.0e9756c5.chunk.css"
   },
   {
-    "revision": "d6868a037c4d9ce0417b",
-    "url": "/Village-Generator/static/js/2.5faa804b.chunk.js"
+    "revision": "1d966f4cddc3e3c9b19b",
+    "url": "/Village-Generator/static/js/2.ab1c9db8.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/Village-Generator/static/js/2.5faa804b.chunk.js.LICENSE.txt"
+    "url": "/Village-Generator/static/js/2.ab1c9db8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dcf691db3409292cf147",
-    "url": "/Village-Generator/static/js/main.604613c8.chunk.js"
+    "revision": "0f3d2fbac08602c4eab1",
+    "url": "/Village-Generator/static/js/main.2306e964.chunk.js"
   },
   {
     "revision": "cedd4ab90950773a55ab",
