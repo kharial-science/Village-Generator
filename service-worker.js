@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Village-Generator/precache-manifest.b3db2347b7dc062f89f380e210b5852f.js"
+  "/Village-Generator/precache-manifest.af2006ce93c171e3dec6aea34b86040d.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f1d625fcc5fa2be44bf9b80de651fef3",
+    "revision": "af6b865e55818429d12ade57fdd147da",
     "url": "/Village-Generator/index.html"
   },
   {
-    "revision": "c4fc4c81913c993f0dea",
-    "url": "/Village-Generator/static/css/main.0e184008.chunk.css"
+    "revision": "dcf691db3409292cf147",
+    "url": "/Village-Generator/static/css/main.0e9756c5.chunk.css"
   },
   {
     "revision": "d6868a037c4d9ce0417b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Village-Generator/static/js/2.5faa804b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c4fc4c81913c993f0dea",
-    "url": "/Village-Generator/static/js/main.6c73ee53.chunk.js"
+    "revision": "dcf691db3409292cf147",
+    "url": "/Village-Generator/static/js/main.604613c8.chunk.js"
   },
   {
     "revision": "cedd4ab90950773a55ab",
@@ -42,6 +42,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ec27b5979a37d3ef320b10dc68979fe4",
     "url": "/Village-Generator/static/media/familybuilding_townhall.ec27b597.svg"
+  },
+  {
+    "revision": "dbcc7e2d13a956aef6a1c616938192d2",
+    "url": "/Village-Generator/static/media/familybuilding_townhallBlue.dbcc7e2d.svg"
+  },
+  {
+    "revision": "cc6197e059d221f1672e501a8bda94ad",
+    "url": "/Village-Generator/static/media/familybuilding_townhallGreen.cc6197e0.svg"
+  },
+  {
+    "revision": "2da6a1940fa9085e825833d9d5843647",
+    "url": "/Village-Generator/static/media/familybuilding_townhallPink.2da6a194.svg"
+  },
+  {
+    "revision": "61e2a49b7e9d0b84a59170122d983f5c",
+    "url": "/Village-Generator/static/media/familybuilding_townhallYellow.61e2a49b.svg"
   },
   {
     "revision": "cca8f218e30118897041aaf963b649ec",
