@@ -7,7 +7,12 @@ class Building extends Component {
 
   render() {
     const images = {
-      townhall: require('../../assets/images/familybuilding_townhall.svg'),
+      townhall: {
+        pink: require('../../assets/images/familybuilding_townhallPink.svg'),
+        blue: require('../../assets/images/familybuilding_townhallBlue.svg'),
+        yellow: require('../../assets/images/familybuilding_townhallYellow.svg'),
+        green: require('../../assets/images/familybuilding_townhallGreen.svg')
+      },
       way: require('../../assets/images/global_way.svg'),
       house: {
         pink: require('../../assets/images/building_housePink.svg'),
@@ -19,7 +24,7 @@ class Building extends Component {
 
     return (
       <div className="Building" draggable={true} onClick={(e) => this.props.handleBuildingClick(e, this.props.building)}>
-        <img src={this.props.building === 'house' ? images.house[this.props.family] : images[this.props.building]} />
+        <img src={this.props.building === 'house' || this.props.building === 'townhall' ? images[this.props.building][this.props.family] : images[this.props.building]} />
       </div>
     )
   }
